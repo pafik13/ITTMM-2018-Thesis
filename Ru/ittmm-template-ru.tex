@@ -43,13 +43,14 @@
 данной работе продемонстрирован простой и эффективный метод краткосрочного
 прогнозирования электропотребления. Подход основывается на методе ансамбля
 базовых моделей (RPART - Recursive PARTitioning, CTREE - Conditional Inference
-Trees) и имеет хороший уровень прогнозирования, который сопоставим с более
-сложными в использовании алгоритмами. Метод ансамбля представляет собой алгоритм
-комбинации набора обученных моделей с целью повышения точности прогноза, при
-этом стараясь избежать переобучения. Существует несколько методов ансамбля,
-которые имеют свои недостатки и преимущества. В данной работе мы использовали
-метод бэггинга (Bagging - Bootstrap aggregating), который помог улучшить
-прогностическую силу отдельных базовых моделей.
+Trees \cite{BreimanEtAl}) и имеет хороший уровень прогнозирования, который
+сопоставим с более сложными в использовании алгоритмами. Метод ансамбля
+представляет собой алгоритм комбинации набора обученных моделей с целью
+повышения точности прогноза, при этом стараясь избежать переобучения. Существует
+несколько методов ансамбля, которые имеют свои недостатки и преимущества. В
+данной работе мы использовали метод бэггинга (Bagging - Bootstrap aggregating
+\cite{Breiman1996}), который помог улучшить прогностическую силу отдельных
+базовых моделей.
 \end{abstract}
 
 \keywords{краткосрочное прогнозирование, метод ансамбля, RPART, CTREE, 
@@ -73,7 +74,25 @@ Trees) и имеет хороший уровень прогнозировани�
   Vadkovsky lane, 3a, Moscow, 127055, Russia}
 
 \begin{altabstract}
-Place here short abstract in English (between 150 and 250 words).
+Short-term forecasting of electricity consumption is topical task in many areas
+in view of the specificity of the product: one can not accumulate and store
+energy for future use. First, the wholesale market participants electricity
+needs to be submitted in advance with planned consumption, and energy-generating
+enterprises need to plan capacity. Secondly, Such an indicator can be used to
+construct other models in as a sign. At the same time, the consumption of
+electrical energy by some object (shop, industrial enterprise, power
+association, etc.) is time series, since it represents the instantaneous values
+​​of the power measured at different times with a certain periodicity. AT This
+work demonstrates a simple and effective method of short-term forecasting of
+power consumption. The approach is based on the ensemble method basic models
+(RPART - Recursive PARTitioning, CTREE - Conditional Inference Trees
+\cite{BreimanEtAl}) and has a good level of forecasting that is comparable to
+more difficult to use algorithms. The ensemble method is an algorithm
+combination of a set of trained models in order to improve the accuracy of the
+forecast; This is trying to avoid retraining. There are several methods of the
+ensemble, which have their own shortcomings and advantages. In this paper we
+used Bagging - Bootstrap aggregating method, which helped to improve predictive
+strength of individual base models.
 \end{altabstract}
 
 \altkeywords{short-term forecast, ensemble, RPART, CTREE, random trees,
@@ -101,11 +120,11 @@ Place here short abstract in English (between 150 and 250 words).
 сложность интерпретации. В данной работе мы используем подход, в котором
 используется ансамбль моделей.
 
-На рисунке ниже изображена динамика почасового потребления электроэнергии в
+На рисунке \ref{fig:data} изображена динамика почасового потребления электроэнергии в
 России за 3 недели 2017 года: с 13 июня по 3 июля.
 \begin{figure}
   \centering
-  \includegraphics[width=0.8\linewidth]{Ru/train_dataset.jpeg}
+  \includegraphics[width=0.6\linewidth]{Ru/train_dataset.jpeg}
   \caption{Исходные данные}
   \label{fig:data}
 \end{figure}
@@ -116,9 +135,9 @@ Place here short abstract in English (between 150 and 250 words).
 \begin{itemize}
     \item простое голосование (Simple Voting)
     \item взвешенное голосование (Weighted Voting)
-    \item смесь экспертов (Mixture of Experts [19])
+    \item смесь экспертов (Mixture of Experts)
     \item бустинг (Boosting)
-    \item бэггинг (Bagging - Bootstrap aggregating)
+    \item бэггинг (Bagging - Bootstrap aggregating \cite{Breiman1996})
 \end{itemize}
 В своей работе мы использовали бэггинг, который был предложен Л. Брейманом в
 1996 году. Суть метода заключается в формировании различных обучающих подвыборок
@@ -131,11 +150,11 @@ Place here short abstract in English (between 150 and 250 words).
 построенный по этим подвыборкам, может оказаться точнее алгоритма, построенного
 по полной выборке. В данной работе в качестве базовых алгоритмов используются
 RPART и CTREE. Результат прогнозирования потребления электроэнергии на одни
-сутки вперед приведен на рисунке ниже.
+сутки вперед (4 июля 2017 года) приведен на рисунке \ref{fig:prediction}.
 \begin{figure}
   \centering
-  \includegraphics[width=0.8\linewidth]{Ru/prediction.jpeg}
-  \caption{Прогноз}
+  \includegraphics[width=0.6\linewidth]{Ru/prediction.jpg}
+  \caption{Прогноз с использованием бэггинга}
   \label{fig:prediction}
 \end{figure}
 
@@ -149,24 +168,27 @@ RPART и CTREE. Результат прогнозирования потребл
 
 \bibitem{Shetinin}
 Е.~Ю. Щетинин, Эффективные компьютерные алгоритмы моделирования спотовых цен на
-электроэнергию. - Научное обозрение, 2016. №22, 237-242 с.
+электроэнергию. - Научное обозрение, 2016. №22, 237-242
 
 \bibitem{ShetininKaplunovMarkov}
 Е.~Ю. Щетинин, С.~В. Каплунов, П.~Н. Марков, Моделирование спотовых цен на
 электроэнергию с использованием марковских процессов переключения режимов. -
-Вестник РУДН, Серия Математика. Информатика. Физика, 2012, №3, 61-68 с.
+Вестник РУДН, Серия Математика. Информатика. Физика, 2012, №3, 61-68
 
 \bibitem{ShetininLyubin}
 Е.~Ю. Щетинин, П.~Г. Любин, Робастный алгоритм построения сглаживающих сплайнов.
-- Научное Обозрение, 2015. №1, 86–94 с.
+- Научное Обозрение, 2015. №1, 86–94
 
 \bibitem{LyubinShetinin}
 П.~Г. Любин, Е.~Ю. Щетинин, Стохастические модели сглаживания и прогнозирования
-коэффициентов смертности. - Научное Обозрение, 2015, №18, 147–155 с.
+коэффициентов смертности. - Научное Обозрение, 2015, №18, 147–155
 
-\bibitem{Breiman}
+\bibitem{BreimanEtAl}
 L. Breiman, J.~H. Friedman, R.~A. Olshen, C.~J. Stone, Classification and
 Regression Trees. - Wadsworth, California.
+
+\bibitem{Breiman1996}
+L. Breiman, Bagging Predictors. - Machine Learning, 1996, 24, 123-140
 
 \end{thebibliography}
 
