@@ -31,22 +31,22 @@
 
 \begin{abstract}
 Краткосрочное прогнозирование потребления электроэнергии является актуальной
-задачей во многих областях в виду специфичности продукта: нельзя накопить и
-хранить энергию впрок. Во-первых, предприятиям-участникам оптового рынка
-электроэнергии необходимо заранее подавать заявки с плановым потреблением, а
-энергогенерирующим предприятиям необходимо планировать мощности. Во-вторых,
-подобный показатель может использоваться при построение других моделей в
-качестве признака. При этом потребление электрической энергии каким-либо
-объектом (цехом, промышленным предприятием, энергообъединением и т.п.) является
-временным рядом, так как представляет собой мгновенные значения потребляемой
-мощности замеренные в различные моменты времени с определенной периодичностью. В
-данной работе продемонстрирован простой и эффективный метод краткосрочного
+задачей во многих областях человеческой деятельности в виду специфичности
+продукта: нельзя накопить и хранить энергию впрок. Во-первых,
+предприятиям-участникам оптового рынка электроэнергии необходимо заранее
+подавать заявки с плановым потреблением, а энергогенерирующим предприятиям
+необходимо планировать мощности. Во-вторых, данный показатель может
+использоваться в качестве одного из признаков при построение других моделей. При
+этом потребление электрической энергии каким-либо объектом является временным
+рядом, так как представляет собой мгновенные значения потребляемой мощности
+замеренные в различные моменты времени с определенной периодичностью. В данной
+работе продемонстрирован простой и эффективный метод краткосрочного
 прогнозирования электропотребления. Подход основывается на методе ансамбля
 базовых моделей (RPART - Recursive PARTitioning, CTREE - Conditional Inference
 Trees \cite{BreimanEtAl}) и имеет хороший уровень прогнозирования, который
 сопоставим с более сложными в использовании алгоритмами. Метод ансамбля
 представляет собой алгоритм комбинации набора обученных моделей с целью
-повышения точности прогноза, при этом стараясь избежать переобучения. Существует
+повышения точности прогноза, но стараясь избежать переобучения. Существует
 несколько методов ансамбля, которые имеют свои недостатки и преимущества. В
 данной работе мы использовали метод бэггинга (Bagging - Bootstrap aggregating
 \cite{Breiman1996}), который помог улучшить прогностическую силу отдельных
@@ -74,25 +74,24 @@ Trees \cite{BreimanEtAl}) и имеет хороший уровень прогн
   Vadkovsky lane, 3a, Moscow, 127055, Russia}
 
 \begin{altabstract}
-Short-term forecasting of electricity consumption is topical task in many areas
-in view of the specificity of the product: one can not accumulate and store
-energy for future use. First, the wholesale market participants electricity
-needs to be submitted in advance with planned consumption, and energy-generating
-enterprises need to plan capacity. Secondly, Such an indicator can be used to
-construct other models in as a sign. At the same time, the consumption of
-electrical energy by some object (shop, industrial enterprise, power
-association, etc.) is time series, since it represents the instantaneous values
-​​of the power measured at different times with a certain periodicity. AT This
-work demonstrates a simple and effective method of short-term forecasting of
-power consumption. The approach is based on the ensemble method basic models
-(RPART - Recursive PARTitioning, CTREE - Conditional Inference Trees
-\cite{BreimanEtAl}) and has a good level of forecasting that is comparable to
-more difficult to use algorithms. The ensemble method is an algorithm
-combination of a set of trained models in order to improve the accuracy of the
-forecast; This is trying to avoid retraining. There are several methods of the
-ensemble, which have their own shortcomings and advantages. In this paper we
-used Bagging - Bootstrap aggregating method, which helped to improve predictive
-strength of individual base models.
+Short-term forecasting of electricity consumption is an actual task in many
+areas of human activity due to the specificity: consumers and power companies
+can't accumulate energy and can't store energy. At the first, consumers which
+participating in the wholesale electricity market must to submit a plan of
+future consumption, and energy-generating enterprises need to plan output.
+Secondly, this indicator can be used as one of the features when fitting other
+models. At the same time, the consumption of electrical energy by any object is
+a time series, since it represents the instantaneous values ​​of the consumed
+power measured at different times with a certain periodicity. In article we
+demonstrate a simple and effective method for short-term forecasting of power
+consumption. The approach is based on the method of base models ensemble (RPART
+- Recursive PARTitioning, CTREE - Conditional Inference Trees
+\cite{BreimanEtAl}) and has a good prediction level comparable with more complex
+algorithms. The ensemble method is an algorithm for combining a set of trained
+models to improve the accuracy of the forecast with trying to avoid overfitting.
+There are several ensemble methods that have their disadvantages and advantages.
+We used Bagging (Bootstrap aggregating \cite{Breiman1996}) which helped to
+improve the predictive power of particular base models.
 \end{altabstract}
 
 \altkeywords{short-term forecast, ensemble, RPART, CTREE, random trees,
@@ -120,8 +119,8 @@ strength of individual base models.
 сложность интерпретации. В данной работе мы используем подход, в котором
 используется ансамбль моделей.
 
-На рисунке \ref{fig:data} изображена динамика почасового потребления электроэнергии в
-России за 3 недели 2017 года: с 13 июня по 3 июля.
+На рисунке \ref{fig:data} изображена динамика почасового потребления
+электроэнергии в России за 3 недели 2017 года: с 13 июня по 3 июля.
 \begin{figure}
   \centering
   \includegraphics[width=0.6\linewidth]{Ru/train_dataset.jpeg}
